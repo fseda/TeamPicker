@@ -1,7 +1,11 @@
-const players = [];
+const players = [
+  // Initialize this array with the name of the players that will be playing
+];
+
+const teamSize = 4; // Customize this variable to your match your needs
 
 const numOfPlayers = players.length;
-const teamSize = 4; // Customizable
+
 const numOfTeams = numOfPlayers % teamSize === 0 ? 
   numOfPlayers / teamSize : 
   Math.floor(numOfPlayers / teamSize) + 1;
