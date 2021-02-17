@@ -1,25 +1,6 @@
-const players = [
-  'felipe',
-  'tiago',
-  'dozol',
-  'vergette',
-  'deri',
-  'kelvyn',
-  'brenno',
-  'gabriel',
-  'tavares',
-  'mp',
-  'igor',
-  'jamel',
-  'PM',
-  'vinicius',
-  'antonio',
-  'mascarado',
-  'caio',
-  'mateus',
-  'breno'
-  // 'lucas'
-];
+
+
+const players = [];
 
 const numOfPlayers = players.length;
 const teamSize = 4; // Customizable
@@ -54,7 +35,3 @@ for (let i = 0; i < numOfTeams; i++) {
   console.log(`Time ${i + 1} - ${team}`);
   console.log('------------------------------------');
 }
-
-
-
-
