@@ -1,9 +1,6 @@
-
 const players = [
   // Initialize this array with the name of the players that will be playing
 ];
-
-let playersLeft = [...players];
 
 const teamSize = 4; // Customize this variable to your match your needs
 
@@ -24,21 +21,13 @@ function Create2DArray(numOfTeams) {
 const teams = Create2DArray(numOfTeams);
 
 // Assign players to teams
-let numOfPlayersLeft;
-let playerIndex;
+for (let i = 0; i < numOfPlayers; i++) {
+  let teamIndex = Math.floor(Math.random() * numOfTeams);
 
-for (let i = 0; i < numOfTeams; i++) {
-  for (let j = 0; j < teamSize; j++) {
-    numOfPlayersLeft = playersLeft.length;
-
-    playerIndex = Math.floor(Math.random() * numOfPlayersLeft);
-
-    teams[i].push(playersLeft[playerIndex]);
-
-    playersLeft.splice(playerIndex, 1);
-
-    if (playersLeft.length === 0) break;
-  }
+  while (teams[teamIndex].length === teamSize)
+    teamIndex = Math.floor(Math.random() * numOfTeams);
+  
+  teams[teamIndex].push(players[i]);
 }
 
 // Display teams
@@ -48,17 +37,11 @@ function displayTeams() {
   for (let i = 0; i < numOfTeams; i++) {
     let team = teams[i].join(', ');
 
-    let divisor = '';
-    for (let j = 0; j < 9 + (team.length); j++) {
-      divisor += '-';
-    }
-
-    teamDisplay += `Team ${i + 1} - ${team}\n` + `${divisor}\n`;
+    teamDisplay += `Time ${i + 1} - ${team}\n` + '------------------------------------\n';
   }
 
   return teamDisplay;
 }
 
+
 console.log(displayTeams());
-
-
